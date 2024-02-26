@@ -1,16 +1,17 @@
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
 import example.model.AccountHolder;
-import example.model.SimpleBankAccount;
+import example.model.SimpleBankAccountWithAtm;
 
-import org.junit.jupiter.api.*;
-
-class SimpleBankAccountTest extends SimpleBankAccountWithFeeTest {
-
-    private static final double FEE = 0;
+public class SimpleBankAccountWithAtmTest extends SimpleBankAccountTest {
+    
+    private static final double FEE = SimpleBankAccountWithAtm.FEE;
 
     @BeforeEach
     void beforeEach() {
         var accountHolder = new AccountHolder("Mario", "Rossi", 1);
-        var bankAccount = new SimpleBankAccount(accountHolder, 0);
+        var bankAccount = new SimpleBankAccountWithAtm(accountHolder, 0);
         super.beforeEach(accountHolder, bankAccount);
     }
 
