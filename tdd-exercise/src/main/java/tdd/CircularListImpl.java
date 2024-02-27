@@ -25,12 +25,16 @@ public class CircularListImpl implements CircularList {
         return this.empty;
     }
 
+    private int getListElementAtCursor() {
+        return this.list.get(this.cursor);
+    }
+
     @Override
     public Optional<Integer> next() {
         if (this.size() == 0) {
             return Optional.empty();
         }
-        int elementToBeReturned = this.list.get(this.cursor);
+        int elementToBeReturned = this.getListElementAtCursor();
         this.cursor++;
         this.cursor = this.cursor % this.size();
         return Optional.of(elementToBeReturned);
@@ -43,7 +47,7 @@ public class CircularListImpl implements CircularList {
         }
         this.cursor--;
         this.cursor = (this.cursor + this.size()) % this.size();
-        int elementToBeReturned = this.list.get(this.cursor);
+        int elementToBeReturned = this.getListElementAtCursor();
         return Optional.of(elementToBeReturned);
     }
 
