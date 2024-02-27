@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import example.model.AccountHolder;
 import example.model.SimpleBankAccountWithAtm;
 
-public class SimpleBankAccountWithAtmTest extends SimpleBankAccountTest {
+public class SimpleBankAccountWithAtmTest extends SimpleBankAccountWithFeeTest {
     
     private static final double FEE = SimpleBankAccountWithAtm.FEE;
 
